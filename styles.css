@@ -1,0 +1,168 @@
+* {
+    font-family: 'monospace', Courier; 
+    padding: 0;
+    margin: 0;
+}
+
+body { 
+    margin:0;
+    font-size: 1em;
+}
+
+button {
+    color: white;
+    border-radius: 10px;
+    background-color: #f95959;
+    min-width: fit-content;
+    width: 30%;
+	font-weight: bold;
+	padding: 10px;
+    border: none;
+	box-shadow: 0 2px 4px darkslategray;
+    transition: all 0.3s ease;
+}
+
+button:active {
+	box-shadow: 0 0 2px darkslategray;
+    transform: translateY(2px);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.container {
+    height: 90vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) ;
+    grid-template-rows: repeat(5, 1fr) ;
+}
+
+.sidebar {
+    background-color: #f95959;
+    color: #233142;
+    height: 100%;
+    grid-row: 1 / span 5;
+    display: grid;
+    grid-template-rows: 1fr repeat(6, minmax(100px, 30%));
+    padding: 2vmin;
+    overflow-y: hidden;
+
+}
+
+.header {
+    background-color: #233142;
+    color: white;
+    width: 100%;
+    grid-column: 2 / span 4;
+    padding: 2vmin;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(100px, 30%));
+    grid-template-rows: 1fr, 1fr;
+    overflow: hidden;
+}
+
+.mainContent {
+    height: 100%;
+    background-color: #e3e3e3;
+    grid-row: 2 / span 4;
+    grid-column: 2 / span 4;
+    padding: 2vmin;
+    display: grid;
+    grid-template-columns: repeat(8, minmax(75px, 30%)) ;
+    grid-template-rows: repeat(6, minmax(50px, 30%)) ;
+    gap: 3vmin;
+    overflow-y: hidden;
+}
+
+input {
+    border-radius: 15px;
+    width: 50%;
+    min-width: 100px;
+}
+
+.sidebar, .header, .mainContent{
+    border: 1px solid rgb(63, 49, 49);
+}
+
+h1 {
+    grid-row: 1 / span 1;
+}
+
+.nav {
+    grid-row: 2 / span 3;
+    min-height: fit-content;
+}
+
+.social {
+    grid-row: 5 / span 3;
+}
+
+ul {
+    list-style: none;
+}
+
+li{
+    transition: transform 0.3s ease-in-out;
+}
+
+li:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.search {
+    grid-column: 1 / span 4;
+}
+
+.profile {
+    grid-column: 5 / span 2;
+}
+
+.welcome {
+    grid-row: 2;
+    grid-column: 1 / span 2;
+}
+
+.buttons {
+    grid-row: 2;
+    grid-column: 4 / span 3;
+}
+
+.card1, .card3, .card5 {
+    grid-column: 1 / span 3;
+}
+
+.card2, .card4, .card6 {
+    grid-column: 4 / span 3;
+}
+
+.card1, .card2 {
+    grid-row: 1 / span 2;
+}
+
+.card3, .card4 {
+    grid-row: 3 / span 2;
+}
+
+.card5, .card6 {
+    grid-row: 5 / span 2;
+}
+
+.card7, .card8 {    
+    grid-column: span 2;
+    grid-row: span 3;
+}
+
+.mainContent > div {
+    border: 1px solid black;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 15px;
+}
+
+.mainContent > div:hover, button:hover, li:hover {
+    transform: scale(1.05);
+}
+
