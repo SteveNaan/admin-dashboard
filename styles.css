@@ -268,4 +268,5 @@ li {
 
 .announcements div, .mainContent div {
     padding: 2vmin;
+    overflow: hidden;
 }
