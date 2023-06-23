@@ -10,23 +10,21 @@ body {
 }
 
 button {
-    color: white;
-    border-radius: 10px;
+    color: #e3e3e3;
+    border-radius: 15px;
     background-color: #f95959;
     min-width: fit-content;
-    width: 30%;
+    width: 20%;
 	font-weight: bold;
 	padding: 10px;
-    border: none;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
     margin-right: 1vmin;
 }
 
 button:active {
 	box-shadow: 0 0 2px darkslategray;
     transform: translateY(2px);
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
 }
 
 button:hover {
@@ -34,27 +32,31 @@ button:hover {
 }
 
 .container {
+    position: relative;
     height: 100vh;
     width: 100vw;
     display: grid;
-    grid-template-columns: .75fr repeat(4, 1fr) ;
+    grid-template-columns: repeat(5, 1fr) ;
     grid-template-rows: repeat(5, 1fr);
 }
 
 .sidebar {
+    position: fixed;
     background-color: #f95959;
     color: #233142;
+    grid-column: 1 / span 1;
     grid-row: 1 / span 5;
     display: grid;
     grid-template-rows: 1fr repeat(6, minmax(100px, 30%));
-    overflow-y: hidden;
     height: 100%;
+    width: 20%;
+    overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 .header {
     background-color: #233142;
-    color: white;
+    color: #e3e3e3;
     width: 100%;
     grid-column: 2 / span 4;
     display: grid;
@@ -113,6 +115,7 @@ input {
 
 h1 {
     grid-row: 1 / span 1;
+    margin: 2vmin;
 }
 
 .nav {
@@ -131,10 +134,16 @@ ul {
 li{
     transition: transform 0.3s ease-in-out;
     margin: 2vmin;
+    background-color: #f95959;
+    font-weight: bold;
+}
+
+.sidebar > * {
+    background-color: #f95959;
 }
 
 li:hover {
-    color: white;
+    color: #e3e3e3;
     cursor: pointer;
 }
 
@@ -150,7 +159,7 @@ li:hover {
 .welcome {
     text-align: center;
     grid-row: 2;
-    grid-column: 1 / span 2;
+    grid-column: 1 / span 3;
 }
 
 .buttons {
@@ -199,4 +208,60 @@ li:hover {
 
 .mainContent > div:hover, .announcements > div:hover, button:hover, li:hover {
     transform: scale(1.05);
+}
+
+.welcomeImage, .profileImage {
+    border-radius: 50%;
+}
+
+.profileImage {
+    height: 5vmin;
+}
+
+.welcomeImage {
+    height: 7.5vmin;
+}
+
+.welcome, .buttons, .profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3vmin;
+}
+
+.search{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 3vmin;
+    margin-left: 3vmin;
+}
+
+.name {
+    font-weight: bold;
+}
+
+li > img {
+    height: 3vmin;
+}
+
+li {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 1vmin;
+}
+
+.search img, .profile img {
+    height: 4vmin;
+    transition: all 0.3s ease-in-out;
+}
+
+.search img, #notification {
+    filter:invert(100%);
+}
+
+.search img:hover, .profile img:hover {
+    transform: scale(1.3);
+    transition: all 0.3s ease-in-out;
 }
